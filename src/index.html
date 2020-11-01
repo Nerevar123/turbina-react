@@ -33,11 +33,20 @@
         <h2 class="description__form-heading">Форма</h2>
         <form class="description__form">
             <fieldset class="description__fieldset">
-                <input class="description__input" placeholder="Имя и фамилия автора" type="text">
-                <input class="description__input" placeholder="Почта" type="email">
-                <input class="description__input" placeholder="Телефон" type="tel" > 
-                <textarea class="description__textarea" placeholder="Стихи" type="text"></textarea>
-                <input class="description__checkbox" type="checkbox">
+                <input class="description__input" placeholder="Имя и фамилия автора" type="text" required>
+                <input class="description__input" placeholder="Почта" type="email" required>
+                <input class="description__input" placeholder="Телефон" type="tel" required>
+                <textarea class="description__textarea" placeholder="Стихи" type="text" required></textarea>
+                <div class="description__checkbox-field">
+                    <input class="description__checkbox" type="checkbox" id="checkbox" required>
+                    <label class="description__label" for="checkbox"></label>
+                    <p class="descripton__checkbox-text">Согласен с <a class="description__link" href="#">офертой</a></p>
+                </div>
+                <!--
+                <div class="round">
+                    <input class="description__checkbox" type="checkbox" id="checkbox"><label class="description__checkmark" for="description__checkbox"></label><p class="descripton__checkbox-text">Согласен с <a class="description__link" href="#">офертой</a></p>
+                </div>
+-->
             </fieldset>
         </form>
     </section>
