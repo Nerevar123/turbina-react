@@ -1,2 +1,1 @@
-# turbina-react
-Turbina project on React
+# Проект «Турбина» #
