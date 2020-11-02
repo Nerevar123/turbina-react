@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import title from './header-title.png';
+import ReactAudioPlayer from 'react-audio-player';
+import song from './song.mp3'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+<header className="header">
+        <img className="header__logo" src="./images/header__logo.svg" alt="Турбина" />
+        <button className="header__button">&nbsp;&nbsp;&nbsp;Стриминги &nbsp;&#8599;&nbsp;&nbsp;&nbsp;</button>
+    </header><span></span>
+    <h1 className="page__heading"><img className="page__logo" src={title} /></h1>
+    <section>
+    <ReactAudioPlayer
+    className="player"
+  src={song}
+  autoPlay
+  controls
+/>
+    </section>
+    </>
+  )
 }
 
 export default App;

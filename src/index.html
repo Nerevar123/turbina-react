@@ -5,7 +5,8 @@
     <title>Турбина</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./vendor/fonts/fonts.css">
+    <link rel="stylesheet" href="./vendor/normalize.css">
 </head>
 
 <body class="page">
@@ -14,7 +15,21 @@
         <button class="header__button">&nbsp;&nbsp;&nbsp;Стриминги &nbsp;&#8599;&nbsp;&nbsp;&nbsp;</button>
     </header><span></span>
     <h1 class="page__heading"><img class="page__logo" src="./images/logo.svg"></h1>
-    <section class="player">Тут будет плеер</section>
+    <section class="player">
+      <audio preload>
+        <source src="song.mp3" type="audio/mp3">
+        <p>Your browser doesn't support HTML5 audio. Here is a <a href="song.mp3">link to the audio</a> instead.</p>
+      </audio>
+      <div class="player__controls">
+        <button class="player__button player__play" aria-label="play pause"></button>
+        <span class="player__song">Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</span>
+        <span class="player__time">10:00</span>
+        <button class="player__button player__menu" aria-label="menu"></button>
+      </div>
+      <div class="player__timeline">
+        <div class="player__progress"></div>
+      </div>
+    </section>
     <section class="description">
         <h1 class="description__heading">О проекте</h1>
         <div class="description__text">
@@ -49,4 +64,6 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; Copyright</p>
     </footer>
-</body></html>
+    <script src="player.js"></script>
+  </body>
+</html>
