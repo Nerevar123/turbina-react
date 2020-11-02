@@ -19,36 +19,6 @@
         background-size: 100vw;
     }
 }
-.header__turbina-logo {
-    /* width: 861px;
-    height: 272px;
-    margin: 16px auto auto 194px; */
-    width: 56%;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.header__heading {
-  margin: 0;
-}
-
-/* @media screen and (max-width: 1280px) {
-    .page__logo {
-        width: calc(861px - 0.5802 * (1280px - 100vw));
-        height: calc(272px - 0.18333 * (1280px - 100vw));
-        margin: 16px auto auto calc(194px - 0.1864585 * (1280px - 100vw));
-    }
-} */
-
-/* вынес общие кнопочные свойства */
-.button {
-    padding: 0;
-    cursor: pointer;
-    outline: none;
-    background-color: transparent;
-}
 
 .header {
     margin: 0;
@@ -58,14 +28,56 @@
     /* min-height: 190px; */
     width: 100%;
     position: relative;
-    min-height: 59.5vh;
 }
 
+.intro {
+    display: flex;
+    width: 100%;
+}
+
+.intro__turbina-logo {
+    width: 720px;
+    height: 226px;
+    margin: 0;
+}
+
+.intro__heading {
+    margin: 7% auto auto auto;
+}
 .header__logo {
     width: 50px;
     height: 50px;
     margin: 20px auto auto 20px;
 }
+
+@media screen and (max-width: 1280px) {
+    .intro__turbina-logo {
+        width: calc(730px - 0.4687 * (1280px - 100vw));
+        height: calc(230px - 0.1562 * (1280px - 100vw));
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .intro__heading {
+        margin: 7% auto auto auto;
+    }
+    .header__logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* вынес общие кнопочные свойства */
+.button {
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+}
+
+
+
+
 
 .header__button {
     width: auto;
@@ -74,7 +86,7 @@
     border-radius: 30px;
     font-size: 18px;
     color: #fff;
-/* добавил кнопки, которые у меня были, эту пока скрыл, она на мобильной версии пригодится */
+    /* добавил кнопки, которые у меня были, эту пока скрыл, она на мобильной версии пригодится */
     display: none;
 }
 
@@ -99,6 +111,12 @@
     font-size: 16px;
     line-height: 1.21;
     color: #fff;
+}
+@media screen and (max-width: 1024px) {
+    .header__links-item {
+        font-size: 15px;
+        padding: 5px 13px;
+    }
 }
 
 .header__button:focus {
@@ -370,6 +388,4 @@
     font-size: 18px;
 }
 
-.footer__copyright {
-
-}
+.footer__copyright {}
