@@ -12,7 +12,21 @@
 <body class="page">
     <header class="header">
         <img class="header__logo" src="./images/header__logo.svg" alt="Турбина">
-        <button class="header__button">&nbsp;&nbsp;&nbsp;Стриминги &nbsp;&#8599;&nbsp;&nbsp;&nbsp;</button>
+        <button class="header__button button">&nbsp;&nbsp;&nbsp;Стриминги &nbsp;&#8599;&nbsp;&nbsp;&nbsp;</button>
+        <ul class="header__links">
+          <li class="header__links-item">
+            <a href="" class="header__link">Яндекс.Музыка ↗</a>
+          </li>
+          <li class="header__links-item">
+            <a href="" class="header__link">Spotify ↗</a>
+        </li>
+          <li class="header__links-item">
+            <a href="" class="header__link">Apple Music ↗</a>
+          </li>
+          <li class="header__links-item">
+            <a href="" class="header__link">VK Music ↗</a>
+          </li>
+        </ul>
     </header><span></span>
     <h1 class="page__heading"><img class="page__logo" src="./images/logo.svg"></h1>
     <section class="player">
@@ -21,46 +35,58 @@
         <p>Your browser doesn't support HTML5 audio. Here is a <a href="song.mp3">link to the audio</a> instead.</p>
       </audio>
       <div class="player__controls">
-        <button class="player__button player__play" aria-label="play pause"></button>
+        <button class="player__button player__play button" aria-label="play pause"></button>
         <span class="player__song">Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</span>
-        <span class="player__time">10:00</span>
-        <button class="player__button player__menu" aria-label="menu"></button>
+        <span class="player__time">0:24</span>
+        <button class="player__button player__menu button" aria-label="menu"></button>
       </div>
       <div class="player__timeline">
         <div class="player__progress"></div>
       </div>
     </section>
-    <section class="description">
-        <h1 class="description__heading">О проекте</h1>
+    <main class="content">
+      <section class="description">
+        <h2 class="description__heading">О проекте</h2>
         <div class="description__text">
             <p class="description__paragraph">Мы знаем, что наши дети постоянно существуют в режиме непрекращающегося творческого процесса. Мы видим это, когда ребёнок что-то напевает, когда он бесконечно рисует, когда придумывает истории, когда разговаривает с едой и игрушками — дети постоянно включены и что-то изобретают. Родители часто недооценивают это спонтанное творчество ребёнка. Это не плохо, просто мы привыкаем к этому. Давайте попробуем внимательнее присмотреться к нашим детям.</p>
             <p class="description__paragraph">Мы запускаем проект «ТУРБИНА», который открывает работу настоящего музыкального лейбла на базе «Маршака». В рамках «ТУРБИНЫ» лучшие современные инди-музыканты пишут свои песни на стихи, написанные детьми. Здесь важно — мы не заставляем наших детей садиться и писать поэзию, мы говорим о том, что родителям стоит быть более внимательными и чуткими к своим детям. Именно так мы сможем получить тексты, которые перестанут быть детскими, не будут осмыслены как взрослые — поэзия, которая сокращает дистанцию между взрослостью и детством, где спонтанное детское творчество и бессознательное, замеченное родителем, становится общественным культурным достоянием.</p>
         </div>
-        <h1 class="description__heading">Как это работает</h1>
+        <h2 class="description__heading">Как это работает</h2>
         <p class="description__text">Вы можете прислать нам тексты, родившиеся у ваших детей, которые вы записали и считаете, что это сильное высказывание. Мы собираем пул таких текстов и передаём их музыкантам. Артисты создают музыку на эти стихи. Мы продюсируем выпуск трека, возможно съёмки клипа и так далее. Мы всегда указываем автора стихотворений внутри релиза: Хадн Дадн feat. Варя Карпова и Федя Быстров — Контур.</p>
-        <h1 class="description__heading">Тезисы</h1>
+        <h2 class="description__heading">Тезисы</h2>
         <ul class="description__list">
-            <li class="description__list-item">— Дети никогда не прекращают творить и круто стараться быть на них похожими в этом</li>
-            <li class="description__list-item">— Детское бессознательное помогает родителям понять, что происходит внутри семьи</li>
-            <li class="description__list-item">— Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное в ней</li>
-            <li class="description__list-item">— Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</li>
+            <li class="description__paragraph">
+                <p class="description__text">— Дети никогда не прекращают творить и круто стараться быть на них похожими в этом</p>
+            </li>
+            <li class="description__paragraph">
+                <p class="description__text">— Детское бессознательное помогает родителям понять, что происходит внутри семьи</p>
+            </li>
+            <li class="description__paragraph">
+                <p class="description__text">— Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное в ней</p>
+            </li>
+            <li class="description__paragraph">
+                <p class="description__text">— Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</p>
+            </li>
         </ul>
-        <h2 class="description__form-heading">Форма</h2>
-        <form class="description__form">
-            <fieldset class="description__fieldset">
-                <input class="description__input" placeholder="Имя и фамилия автора" type="text" required>
-                <input class="description__input" placeholder="Почта" type="email" required>
-                <input class="description__input" placeholder="Телефон" type="tel" required>
-                <textarea class="description__textarea" placeholder="Стихи" type="text" required></textarea>
-                <div class="description__checkbox-field">
-                    <input class="description__checkbox" type="checkbox" id="checkbox" required>
-                    <label class="description__label" for="checkbox"></label>
-                    <p class="descripton__checkbox-text">Согласен с <a class="description__link" href="#">офертой</a></p>
+      </section>
+      <section class="form">
+        <h2 class="form__heading">Форма</h2>
+        <form class="form__post-form">
+            <fieldset class="form__fieldset">
+                <input class="form__input" placeholder="Имя и фамилия автора" type="text" required>
+                <input class="form__input" placeholder="Почта" type="email" required>
+                <input class="form__input" placeholder="Телефон" type="tel" required>
+                <textarea class="form__textarea" placeholder="Стихи" type="text" required></textarea>
+                <div class="form__checkbox-field">
+                    <input class="form__checkbox" type="checkbox" id="checkbox" required>
+                    <label class="form__label" for="checkbox"></label>
+                    <p class="form__checkbox-text">Согласен с <a class="form__link" href="#">офертой</a></p>
                 </div>
             </fieldset>
-            <button class="description__button">Отправить</button>
+            <button class="form__button button">Отправить</button>
         </form>
-    </section>
+      </section>
+    </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; Copyright</p>
     </footer>

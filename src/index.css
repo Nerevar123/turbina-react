@@ -1,12 +1,16 @@
 .page {
+    background-color: #F8F8F8;
     background-size: 1280px;
     background-image: url(./images/IMG_1.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Inter', Arial, sans-serif;
-    min-width: 100vw;
+    min-width: 320px;
+    /*  для пиксель-перфекта, потом будет 1920 или 100vw */
+    max-width: 1280px;
+    width: 100%;
     min-height: 100vh;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -19,16 +23,25 @@
 .page__logo {
     width: 861px;
     height: 272px;
-    margin: 36px auto auto 184px;
+    margin: 16px auto auto 194px;
 }
 
 @media screen and (max-width: 1280px) {
     .page__logo {
         width: calc(861px - 0.5802 * (1280px - 100vw));
         height: calc(272px - 0.18333 * (1280px - 100vw));
-        margin: 36px auto auto calc(184px - 0.1864585 * (1280px - 100vw));
+        margin: 16px auto auto calc(194px - 0.1864585 * (1280px - 100vw));
     }
 }
+
+/* вынес общие кнопочные свойства */
+.button {
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+}
+
 .header {
     margin: 0;
     padding: 0;
@@ -41,7 +54,7 @@
 .header__logo {
     width: 50px;
     height: 50px;
-    margin: 15px auto auto 25px;
+    margin: 20px auto auto 26px;
 }
 
 .header__button {
@@ -49,12 +62,33 @@
     height: 40px;
     border: 2px solid white;
     border-radius: 30px;
-    background-color: transparent;
     font-size: 18px;
     color: #fff;
-    margin: 20px 20px auto auto;
-    padding: 0;
-    cursor: pointer;
+/* добавил кнопки, которые у меня были, эту пока скрыл, она на мобильной версии пригодится */
+    display: none;
+}
+
+.header__links {
+    list-style: none;
+    padding-left: 0;
+    margin: 25px 21px auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header__links-item {
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 7px 18px;
+    margin-bottom: 10px;
+}
+
+.header__link {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1.21;
+    color: #fff;
 }
 
 .header__button:focus {
@@ -64,10 +98,9 @@
     margin: 0;
 }
 
-
 .player {
-    width: calc(100vw - 42px);
-    margin: 32px 22px 28px 20px;
+    width: calc(100% - 42px);
+    margin: 46px 18px 12px 24px;
     height: 197px;
     color: white;
     position: relative;
@@ -78,7 +111,6 @@
 }
 
 .player__controls {
-    visibility: hidden;
     width: 100%;
     height: 50px;
     display: flex;
@@ -87,32 +119,28 @@
 }
 
 .player__button {
-    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center center;
     border: 0;
-    padding: 0;
-    cursor: pointer;
-    outline: none;
     width: 24px;
     height: 24px;
 }
 
 .player__play {
-  background-image: url(./images/player-play.svg);
+    background-image: url(./images/player-play.svg);
     margin-right: 20px;
 }
 
 .player__menu {
     background-image: url(./images/player-menu.svg);
+    margin-right: 2px;
 }
 
 .player__time {
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 1.21;
-  margin-right: 20px;
-
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.21;
+    margin-right: 22px;
 }
 
 .player__song {
@@ -123,75 +151,91 @@
 }
 
 .player__timeline {
-  width: calc(100% - 88px);
-  height: 3px;
-  background-color: rgba(243, 243, 243, 0.3);
-  cursor: pointer;
+    width: calc(100% - 88px);
+    height: 3px;
+    background-color: rgba(243, 243, 243, 0.3);
+    cursor: pointer;
 }
 
 .player__progress {
-  background-color: #fff;
-  width: 50%;
-  height: 3px;
+    background-color: #fff;
+    width: 50%;
+    height: 3px;
 }
 
-.description {
-    margin: 0 11px 0 11px;
+.content {
     background-color: #FFF;
     border-radius: 10px;
+    margin: 0 11px;
     padding-top: 64px;
     padding-left: 58px;
     padding-bottom: 86px;
-    display: flex;
-    flex-direction: column;
 }
 
+.description {
+    display: flex;
+    flex-direction: column;
+    max-width: 59%;
+}
+
+/* перенес маржины на залоговки, чтобы в тезисах отдельный класс не делать */
 .description__heading {
-    width: 716px;
     font-size: 30px;
+    line-height: 1.21;
     font-weight: 400;
-    margin: 0;
+    margin-top: 62px;
+    margin-bottom: 46px;
+}
+
+.description__heading:first-of-type {
+    margin-top: 0;
+}
+
+.description__heading:last-of-type {
+    margin-bottom: 44px;
 }
 
 .description__text {
-    width: 716px;
     font-size: 18px;
+    line-height: 1.21;
     font-weight: 400;
-    margin: 44px auto 60px 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .description__list {
-    margin: 44px auto 101px 0;
+    margin-top: 0;
+    margin-bottom: 0;
     list-style-type: none;
     padding: 0;
     width: 716px;
 }
 
 .description__paragraph {
-    margin: 31px 0 0 0;
+    margin-top: 23px;
+    margin-bottom: 0;
 }
 
 .description__paragraph:first-of-type {
     margin: 0;
 }
 
-.description__list-item {
-    margin: 31px 0 0 0;
+/* форму в отдельный блок выделил, потом на Реакте все равно делить */
+.form {
+    width: 50%;
 }
 
-.description__list-item:first-of-type {
-    margin: 0;
-}
-
-.description__form-heading {
+.form__heading {
     font-size: 30px;
+    line-height: 1.21;
     font-weight: 400;
-    margin: 0 auto 80px 0;
+    margin-top: 120px;
+    margin-bottom: 66px;
 }
 
-.description__form {}
+.form__post-form {}
 
-.description__fieldset {
+.form__fieldset {
     display: flex;
     flex-direction: column;
     border: none;
@@ -199,7 +243,7 @@
     padding: 0;
 }
 
-.description__input {
+.form__input {
     width: 545px;
     height: 54px;
     margin: 16px auto 0 0;
@@ -211,16 +255,16 @@
     font-size: 18px;
 }
 
-.description__input::placeholder {
+.form__input::placeholder {
     color: #000;
     font-size: 18px;
 }
 
-.description__input:focus {
+.form__input:focus {
     outline: none;
 }
 
-.description__textarea {
+.form__textarea {
     height: 222px;
     width: 545px;
     margin: 16px auto 0 0;
@@ -233,13 +277,12 @@
     border: 2px solid black;
 }
 
-.description__textarea::placeholder {
+.form__textarea::placeholder {
     color: #000;
     font-size: 18px;
 }
 
-
-.description__checkbox-field {
+.form__checkbox-field {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -247,7 +290,7 @@
     margin: 34px auto 0 0;
 }
 
-.description__label {
+.form__label {
     background-color: #fff;
     border: 2px solid #000;
     border-radius: 50%;
@@ -260,7 +303,7 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-.description__label:after {
+.form__label:after {
     border: 2px solid #fff;
     border-top: none;
     border-right: none;
@@ -274,46 +317,50 @@
     width: 12px;
 }
 
-.description__checkbox {
+.form__checkbox {
     visibility: hidden;
     height: 0;
     width: 0;
 }
 
-.description__checkbox:checked + .description__label {
+.form__checkbox:checked + .form__label {
     transition: background-color 0.3s ease-in;
     background-color: #000;
     border-color: #000;
 }
 
-.description__checkbox:checked + .description__label:after {
+.form__checkbox:checked + .form__label:after {
     transition: opacity 0.3s ease-in;
     opacity: 1;
 }
 
-.descripton__checkbox-text {
+.form__checkbox-text {
     margin: auto auto auto 41px;
     font-size: 18px;
+    line-height: 1.21;
 }
-.description__link {
+
+.form__link {
     color: #000;
 }
-.description__button {
-    width: 597px;
+
+.form__button {
+    width: 100%;
     height: 60px;
     border: 2px solid black;
-    margin: 88px 0 0 0;
-    background-color: transparent;
+    margin: 82px 0 0 0;
     border-radius: 30px;
     font-size: 18px;
     font-weight: 400;
 }
+
 .footer {
     height: 100px;
     color: #fff;
     font-weight: 400;
     font-size: 18px;
 }
+
 .footer__copyright {
 
 }
