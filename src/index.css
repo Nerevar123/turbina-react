@@ -171,10 +171,15 @@
     height: 2px;
 }
 
+@media screen and (min-width: 1281px) {
+  .header {
+    max-height: 100vh;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .header {
     height: 770px;
-    max-height: 100vh;
   }
   .header__turbina-logo {
     width: 720px;
