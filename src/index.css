@@ -1,6 +1,12 @@
 .page {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     background-color: #F8F8F8;
-    background-size: 1280px;
+    background-size: 100vw 100vh;
     background-image: url(./images/pic.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -14,35 +20,40 @@
     flex-direction: column;
 }
 
-@media screen and (min-width: 1280px) {
-    .page {
-        background-size: 100vw;
-    }
+.header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: repeat(3, minmax(min-content, 1fr));
+    grid-template-areas: "logo links"
+                         "turbina turbina"
+                         "player player";
 }
-.header__turbina-logo {
-    /* width: 861px;
-    height: 272px;
-    margin: 16px auto auto 194px; */
-    width: 56%;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.header__logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  grid-area: logo;
 }
 
 .header__heading {
-  margin: 0;
+    display: flex;
+    grid-area: turbina;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
-/* @media screen and (max-width: 1280px) {
-    .page__logo {
-        width: calc(861px - 0.5802 * (1280px - 100vw));
-        height: calc(272px - 0.18333 * (1280px - 100vw));
-        margin: 16px auto auto calc(194px - 0.1864585 * (1280px - 100vw));
-    }
-} */
+.header__turbina-logo {
+    width: 60%;
+    margin: auto;
+}
 
-/* вынес общие кнопочные свойства */
 .button {
     padding: 0;
     cursor: pointer;
@@ -50,48 +61,31 @@
     background-color: transparent;
 }
 
-.header {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    /* min-height: 190px; */
-    width: 100%;
-    position: relative;
-    min-height: 59.5vh;
-}
-
-.header__logo {
-    width: 50px;
-    height: 50px;
-    margin: 20px auto auto 20px;
-}
-
-.header__button {
-    width: auto;
-    height: 40px;
-    border: 2px solid white;
-    border-radius: 30px;
-    font-size: 18px;
-    color: #fff;
-/* добавил кнопки, которые у меня были, эту пока скрыл, она на мобильной версии пригодится */
+.header__links-button {
     display: none;
+    margin-left: auto;
+    margin-bottom: 6px;
 }
 
 .header__links {
-    list-style: none;
-    padding-left: 0;
-    margin: 15px 15px auto auto;
+    margin-right: 15px;
+    margin-top: 15px;
+    grid-area: links;
+}
+
+.header__links-list {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .header__links-item {
-    border: 2px solid #fff;
-    border-radius: 30px;
-    padding: 6px 19px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    margin-top: 8px;
 }
 
 .header__link {
@@ -99,23 +93,25 @@
     font-size: 16px;
     line-height: 1.21;
     color: #fff;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 6px 19px;
 }
 
-.header__button:focus {
-    outline: none;
+.header__player {
+    margin: 0 auto 20px;
 }
 
 .player {
-    width: calc(100% - 42px);
-    margin: 36px 18px 12px 24px;
-    height: 197px;
+    width: calc(100% - 50px);
     color: white;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-}
+    grid-area: player;
+  }
 
 .player__controls {
     width: 100%;
@@ -128,28 +124,28 @@
 .player__button {
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
     border: 0;
 }
 
 .player__play {
     background-image: url(./images/player-play.svg);
     margin-right: 20px;
-    width: 20px;
-    height: 16px;
+    width: 16px;
+    height: 20px;
 }
 
 .player__menu {
     background-image: url(./images/player-menu.svg);
-    margin-right: 2px;
     width: 24px;
     height: 24px;
+    margin-left: 20px;
 }
 
 .player__time {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.21;
-    margin-right: 22px;
 }
 
 .player__song {
@@ -157,10 +153,13 @@
     font-size: 20px;
     line-height: 1.21;
     flex-grow: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .player__timeline {
-    width: calc(100% - 88px);
+    width: calc(100% - 80px);
     height: 2px;
     background-color: rgba(243, 243, 243, 0.3);
     cursor: pointer;
@@ -170,6 +169,111 @@
     background-color: #fff;
     width: 50%;
     height: 2px;
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    height: 770px;
+    max-height: 100vh;
+  }
+  .header__turbina-logo {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 670px;
+  }
+  .header__logo {
+    width: 40px;
+    height: 40px;
+  }
+  .header__links-item {
+    margin-top: 7px;
+  }
+  .header__link {
+    font-size: 15px;
+    padding: 6px 16px;
+  }
+  .header__turbina-logo {
+    width: 600px;
+    padding-top: 12px;
+  }
+  .player__controls {
+    height: 44px;
+  }
+  .player__song {
+    font-size: 18px;
+  }
+  .player__time {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 1016px;
+  }
+  .header__turbina-logo {
+    width: 620px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    height: 692px;
+  }
+  .header__logo {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+  .header__links {
+    margin-right: 13px;
+    margin-top: 13px;
+  }
+  .header__link {
+    padding: 5px 14px;
+  }
+  .header__turbina-logo {
+    width: 270px;
+  }
+  .player {
+    width: calc(100% - 30px);
+  }
+  .player__controls {
+    height: 38px;
+  }
+  .player__play {
+    min-width: 13px;
+    margin-right: 12px;
+  }
+  .player__menu {
+    min-width: 16px;
+    margin-left: 9px;
+  }
+  .player__song {
+    font-size: 14px;
+    line-height: 1.36;
+  }
+  .player__time {
+    font-size: 14px;
+    line-height: 1.36;
+  }
+  .player__timeline {
+    width: calc(100% - 55px);
+  }
+  .header__link {
+    font-size: 12px;
+  }
+  .header__links-button {
+    display: block;
+}
+  .header__links-list {
+    display: none;
+  }
 }
 
 .content {
@@ -187,7 +291,6 @@
     max-width: 59%;
 }
 
-/* перенес маржины на залоговки, чтобы в тезисах отдельный класс не делать */
 .description__heading {
     font-size: 30px;
     line-height: 1.21;
@@ -229,7 +332,6 @@
     margin: 0;
 }
 
-/* форму в отдельный блок выделил, потом на Реакте все равно делить */
 .form {
     width: 50%;
 }
@@ -370,6 +472,4 @@
     font-size: 18px;
 }
 
-.footer__copyright {
-
-}
+.footer__copyright {}
