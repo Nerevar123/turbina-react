@@ -285,36 +285,44 @@
     background-color: #FFF;
     border-radius: 10px;
     margin: 0 11px;
-    padding-top: 64px;
-    padding-left: 58px;
+    padding-top: 100px;
+    padding-left: 50px;
     padding-bottom: 86px;
+    padding-right: 50px;
 }
 
 .description {
     display: flex;
     flex-direction: column;
-    max-width: 59%;
+    max-width: 680px;
+    width: 100%;
+}
+.description__article {
+    width: 100%;
+    margin-top: 62px;
 }
 
 .description__heading {
-    font-size: 30px;
+    font-size: 46px;
     line-height: 1.21;
     font-weight: 400;
-    margin-top: 62px;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-top: 0px;
     margin-bottom: 46px;
 }
 
-.description__heading:first-of-type {
+.description__article:first-of-type {
     margin-top: 0;
 }
 
-.description__heading:last-of-type {
+.description__article:last-of-type {
     margin-bottom: 44px;
 }
 
 .description__text {
-    font-size: 18px;
-    line-height: 1.21;
+    font-size: 15px;
+    line-height: 1.46;
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 0;
@@ -325,7 +333,8 @@
     margin-bottom: 0;
     list-style-type: none;
     padding: 0;
-    width: 716px;
+    max-width: 716px;
+    width: 100%;
 }
 
 .description__paragraph {
@@ -337,8 +346,11 @@
     margin: 0;
 }
 
-.form {
-    width: 50%;
+.description__form {
+    margin-top: 60px;
+    width: 100%;
+    max-width: 600px;
+    font-size: 16px;
 }
 
 .form__heading {
@@ -360,43 +372,29 @@
 }
 
 .form__input {
-    width: 545px;
+    width: 100%;
     height: 54px;
     margin: 16px auto 0 0;
-    border-radius: 30px;
-    border: 2px solid black;
-    padding-left: 24px;
-    padding-right: 24px;
+    border: none;
+    border-bottom: 2px solid black;
     color: #000;
     font-size: 18px;
+}
+.form__input::inner-spin-button {
+    display: none;
 }
 
 .form__input::placeholder {
     color: #000;
-    font-size: 18px;
+    opacity: 0.4;
+    font-size: 16px;
 }
 
 .form__input:focus {
     outline: none;
 }
 
-.form__textarea {
-    height: 222px;
-    width: 545px;
-    margin: 16px auto 0 0;
-    color: #000;
-    font-size: 18px;
-    border-radius: 30px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 18px;
-    border: 2px solid black;
-}
 
-.form__textarea::placeholder {
-    color: #000;
-    font-size: 18px;
-}
 
 .form__checkbox-field {
     position: relative;
@@ -452,7 +450,6 @@
 
 .form__checkbox-text {
     margin: auto auto auto 41px;
-    font-size: 18px;
     line-height: 1.21;
 }
 
