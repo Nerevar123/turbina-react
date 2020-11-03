@@ -12,40 +12,40 @@
 <body class="page">
     <header class="header">
         <img class="header__logo" src="./images/header__logo.svg" alt="Турбина">
-        <button class="header__button button">&nbsp;&nbsp;&nbsp;Стриминги &nbsp;&#8599;&nbsp;&nbsp;&nbsp;</button>
-        <ul class="header__links">
-          <li class="header__links-item">
-            <a href="" class="header__link">Яндекс.Музыка ↗</a>
+        <dev class="header__links">
+          <button class="header__link header__links-button button">Стриминги</button>
+          <ul class="header__links-list">
+            <li class="header__links-item">
+              <a href="" class="header__link">Яндекс.Музыка ↗</a>
+            </li>
+            <li class="header__links-item">
+              <a href="" class="header__link">Spotify ↗</a>
           </li>
-          <li class="header__links-item">
-            <a href="" class="header__link">Spotify ↗</a>
-        </li>
-          <li class="header__links-item">
-            <a href="" class="header__link">Apple Music ↗</a>
-          </li>
-          <li class="header__links-item">
-            <a href="" class="header__link">VK Music ↗</a>
-          </li>
-        </ul>
+            <li class="header__links-item">
+              <a href="" class="header__link">Apple Music ↗</a>
+            </li>
+            <li class="header__links-item">
+              <a href="" class="header__link">VK Music ↗</a>
+            </li>
+          </ul>
+        </dev>
+        <h1 class="header__heading"><img class="header__turbina-logo" src="./images/logo.svg" alt="Логотип"></h1>
+        <div class="header__player player">
+          <audio preload>
+            <source src="song.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="song.mp3">link to the audio</a> instead.</p>
+          </audio>
+          <div class="player__controls">
+            <button class="player__button player__play button" aria-label="play pause"></button>
+            <span class="player__song">Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</span>
+            <span class="player__time">2:24</span>
+            <button class="player__button player__menu button" aria-label="menu"></button>
+          </div>
+          <div class="player__timeline">
+            <div class="player__progress"></div>
+          </div>
+        </div>
     </header>
-    <section class="intro">
-        <h1 class="intro__heading"><img class="intro__turbina-logo" src="./images/logo.svg" alt="Логотип"></h1>
-    </section>
-    <section class="player">
-      <audio preload>
-        <source src="song.mp3" type="audio/mp3">
-        <p>Your browser doesn't support HTML5 audio. Here is a <a href="song.mp3">link to the audio</a> instead.</p>
-      </audio>
-      <div class="player__controls">
-        <button class="player__button player__play button" aria-label="play pause"></button>
-        <span class="player__song">Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</span>
-        <span class="player__time">2:24</span>
-        <button class="player__button player__menu button" aria-label="menu"></button>
-      </div>
-      <div class="player__timeline">
-        <div class="player__progress"></div>
-      </div>
-    </section>
     <main class="content">
       <section class="description">
         <h2 class="description__heading">О проекте</h2>
