@@ -79,17 +79,22 @@
                 <p class="description__text">Заполняя эту форму, вы становитесь частью проекта.</p>
                 <form class="description__form form">
                     <fieldset class="form__fieldset">
-                        <input class="form__input" placeholder="Имя и фамилия автора" type="text" required>
-                        <input class="form__input" placeholder="Телефон" type="tel" pattern="[0-9]*" inputmode="numeric" required>
-                        <input class="form__input" placeholder="Почта" type="email" required>
-                        <input class="form__input" placeholder="Стихи" type="text" required>
+                        <input class="form__input" id="form-name" placeholder="Имя и фамилия автора" type="text" required>
+                        <span class="form__error form__error_active" id="form-name-error" >Вы пропустили это поле</span>
+                        <input class="form__input" placeholder="Телефон" type="tel" pattern="[0-9]*" inputmode="numeric" id="form-tel" required>
+                        <span class="form__error" id="form-tel-error" >Вы пропустили это поле</span>
+                        <input class="form__input" placeholder="Почта" type="email" id="form-email" required>
+                        <span class="form__error" id="form-email-error" >Вы пропустили это поле</span>
+                        <input class="form__input" placeholder="Стихи" type="text" id="form-poem" required>
+                        <span class="form__error" id="form-poem-error" >Вы пропустили это поле</span>
                         <div class="form__checkbox-field">
                             <input class="form__checkbox" type="checkbox" id="checkbox" required>
                             <label class="form__label" for="checkbox"></label>
                             <p class="form__checkbox-text">Согласен с <a class="form__link" href="#">офертой</a></p>
                         </div>
                     </fieldset>
-                    <button class="form__button button">Отправить форму</button>
+                    <button class="form__button button" id="form-button">Отправить форму</button>
+                    <span class="form__error form__error_type_centered form__error_active" id="form-button-error" >Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!</span>
                 </form>
             </article>
         </section>
