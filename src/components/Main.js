@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+import PostForm from './PostForm';
 
 function Main() {
   return (
@@ -36,7 +36,7 @@ function Main() {
       <article className="description__article">
         <h2 className="description__heading">Форма.</h2>
         <p className="description__text">Заполняя эту форму, вы становитесь частью проекта.</p>
-        <Form />
+        <PostForm />
       </article>
     </section>
   </main>
