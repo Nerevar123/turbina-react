@@ -102,11 +102,11 @@
 .player__song-list::-webkit-scrollbar {
   width: 3px;
 }
- 
+
 .player__song-list::-webkit-scrollbar-track {
   border: 3px solid rgba(243, 243, 243, 0.1);
 }
- 
+
 .player__song-list::-webkit-scrollbar-thumb {
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 3px;
@@ -130,7 +130,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 380px) {
   .player {
     width: calc(100% - 30px);
   }

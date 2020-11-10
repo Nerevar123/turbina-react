@@ -54,7 +54,7 @@ const PostForm = () => {
            <div className="form__checkbox-field">
             <input className="form__checkbox" type="checkbox" id="checkbox" required />
             <label className="form__label" htmlFor="checkbox"></label>
-            <p className="form__checkbox-text">Согласен с <a className="form__link" href="#">офертой</a></p>
+            <p className="form__checkbox-text">Согласен с <a className="form__link" href="https://example.com/" rel="noreferrer" target="_blank">офертой</a></p>
            </div>
         </fieldset>
         <button type="submit" disabled={isSubmitting || !dirty} className={`form__button ${(!isValid || !dirty) ? "form__button_disabled" : ''}`}>Submit</button>
