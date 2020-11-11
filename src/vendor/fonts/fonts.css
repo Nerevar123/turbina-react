@@ -25,4 +25,10 @@
        url("../fonts/Inter-Black.woff") format("woff");
 }
 
-
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-display: swap;
+  src: url("../fonts/Inter-Italic.woff2") format("woff2"),
+       url("../fonts/Inter-Italic.woff") format("woff");
+}

@@ -1,23 +1,23 @@
 .description {
   display: flex;
   flex-direction: column;
-  max-width: 680px;
+  max-width: 755px;
   width: 100%;
 }
 
 .description__article {
   width: 100%;
-  margin-top: 62px;
+  margin-bottom: 92px;
 }
 
 .description__heading {
   font-size: 50px;
-  line-height: 1.22;
+  line-height: 1.21;
   font-weight: 400;
   font-style: italic;
   text-transform: uppercase;
   margin-top: 0px;
-  margin-bottom: 46px;
+  margin-bottom: 42px;
 }
 
 .description__article:first-of-type {
@@ -30,7 +30,7 @@
 
 .description__text {
   font-size: 16px;
-  line-height: 1.37;
+  line-height: 1.375;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
@@ -41,12 +41,19 @@
   margin-bottom: 0;
   list-style-type: none;
   padding: 0;
-  max-width: 716px;
   width: 100%;
 }
 
+.description__list-item {
+  margin-bottom: 15px;
+}
+
 .description__paragraph {
-  margin-top: 23px;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.description__list-item:last-of-type {
   margin-bottom: 0;
 }
 
