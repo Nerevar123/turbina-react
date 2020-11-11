@@ -1,7 +1,14 @@
 import React from "react";
+import useWindowSize from "../hooks/useWindowSize";
 import song_cover from "../images/player-cover.png";
 
 function Player() {
+  const size = useWindowSize();
+
+  React.useEffect(() => {
+    console.log(size.width);
+  });
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [isPlaying, setIsPlaying] = React.useState(false);
   function handleMenuClick() {
@@ -13,6 +20,8 @@ function Player() {
   }
 
   return (
+    <>
+    {size.width>768 &&
     <div className="header__player player">
       <audio>
         <source src="song.mp3" type="audio/mp3" />
@@ -85,6 +94,11 @@ function Player() {
         </ul>
       </div>
     </div>
+  }
+  {size.width<768 &&
+  <h1>Маленький плеер</h1>
+}
+    </>
   );
 }
 
