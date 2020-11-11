@@ -106,6 +106,16 @@
   background-color: rgba(243, 243, 243, 0.3);
   cursor: pointer;
 }
+.player__button_type_video {
+  width: 0px;
+  height: 0px;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-size: 0px;
+  line-height: 1.19;
+  padding: 0;
+  margin: auto 0 auto 0;
+}
 .player__button_type_text {
   width: 0px;
   height: 0px;
@@ -114,23 +124,21 @@
   color: white;
   font-size: 0px;
   line-height: 1.19;
-  font-style: italic;
   padding: 0;
   margin: auto 0 auto 0;
 }
 
 .player__button_type_text_opened {
   width: 135px;
-  height: 35px;
+  height: 34px;
   border-radius: 30px;
   color: white;
   font-size: 16px;
   line-height: 1.19;
-  font-style: italic;
   border: 2px solid white;
   margin: auto 0 auto 20px;
 }
-.player__button_type_text:focus {
+.player__button {
   outline: none;
 }
 
@@ -185,6 +193,46 @@
 }
 
 @media screen and (max-width: 768px) {
+  .player__button_type_video_opened {
+    width: 87px;
+    height: 34px;
+    border-radius: 30px;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    line-height: 1.19;
+    border: 2px solid white;
+    margin: auto 10px auto auto;
+  }
+  .player__song-info_opened {
+    margin: auto 20px auto 0;
+    width: auto;
+  }
+  .player__button_type_text_opened{
+    margin: auto 44px auto 0;
+    font-size: 15px;
+  }
+  .player__controls-container {
+    width: 100%;
+  }
+  .player__song-cover_opened {
+    width: 112px;
+    height: 112px;
+    margin: auto auto 0 33px;
+  }
+  .player__playlist-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .player__song-list_opened {
+    max-height: 112px;
+    margin-left: 30px;
+  }
+  .player__play {
+    width: 18px;
+    height: 15px
+  }
 
 }
 

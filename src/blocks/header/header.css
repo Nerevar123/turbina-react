@@ -141,6 +141,9 @@
   .header__turbina-logo {
     width: 620px;
   }
+  .header__player {
+    margin: 0 auto 20px;
+  }
 }
 
 @media screen and (max-width: 380px) {
