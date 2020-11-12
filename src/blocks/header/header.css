@@ -75,7 +75,6 @@
 }
 
 .header__links-button {
-  display: none;
   margin-left: auto;
   margin-bottom: 6px;
 }
@@ -143,7 +142,7 @@
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 414px) {
   .header {
     height: 692px;
   }
@@ -174,10 +173,6 @@
 
   .header__link {
     font-size: 12px;
-  }
-
-  .header__links-button {
-    display: block;
   }
 
   .header__links-list {
