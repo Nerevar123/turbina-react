@@ -135,20 +135,21 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    height: 1016px;
+    height: 100vh;
+    min-height: 483px;
   }
 
   .header__turbina-logo {
     width: 620px;
   }
   .header__player {
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 615px) {
   .header {
-    height: 692px;
+    /* height: 692px; */
   }
 
   .header__logo-link {
