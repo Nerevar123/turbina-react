@@ -1,5 +1,4 @@
 import React from 'react';
-// import Player from './Player';
 import Player from './player/index';
 import useWindowSize from "../hooks/useWindowSize";
 import logo from '../images/header-logo.svg';

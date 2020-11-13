@@ -118,7 +118,6 @@
   .header__player {
     margin: 0 auto 30px;
   }
-  
 
   .header__logo-link {
     width: 40px;
@@ -149,16 +148,13 @@
   .header__turbina-logo {
     width: 620px;
   }
+
   .header__player {
     margin: 0 auto 26px;
   }
 }
 
 @media screen and (max-width: 615px) {
-  .header {
-    /* height: 692px; */
-  }
-
   .header__logo-link {
     width: 24px;
     height: 24px;

@@ -72,7 +72,7 @@ const Player = () => {
             >
               <div className="player__controls">
                 <button
-                  className={`player__button player__play button ${
+                  className={`player__button  button player__play button ${
                     isPlaying ? "player__play_active" : ""
                   }`}
                   aria-label="play pause"
@@ -100,7 +100,7 @@ const Player = () => {
                   />
                 </div>
                 <button
-                  className={`player__button player__button_type_text ${
+                  className={`player__button  button player__button_type_text ${
                     isOpen ? "player__button_type_text_opened" : ""
                   }`}
                   onClick={handleTextClick}
@@ -108,7 +108,7 @@ const Player = () => {
                   {isOpen ? "Текст песни" : ""}
                 </button>
                 <button
-                  className={`player__button player__menu button ${
+                  className={`player__button  button player__menu button ${
                     isOpen ? "player__menu_opened" : ""
                   }`}
                   aria-label="menu"
@@ -152,7 +152,7 @@ const Player = () => {
           >
             <div className="player__controls">
               <button
-                className={`player__button player__play button ${
+                className={`player__button  button player__play button ${
                   isPlaying ? "player__play_active" : ""
                 }`}
                 aria-label="play pause"
@@ -184,14 +184,14 @@ const Player = () => {
                 />
               </div>
               <button
-                className={`player__button player__button_type_video ${
+                className={`player__button  button player__button_type_video ${
                   isOpen ? "player__button_type_video_opened" : ""
                 }`}
               >
                 {isOpen ? "Клип" : ""}
               </button>
               <button
-                className={`player__button player__button_type_text ${
+                className={`player__button  button player__button_type_text ${
                   isOpen ? "player__button_type_text_opened" : ""
                 }`}
                 onClick={handleTextClick}
@@ -199,7 +199,7 @@ const Player = () => {
                 {isOpen ? "Текст песни" : ""}
               </button>
               <button
-                className={`player__button player__menu button ${
+                className={`player__button  button player__menu button ${
                   isOpen ? "player__menu_opened" : ""
                 }`}
                 aria-label="menu"
@@ -255,7 +255,7 @@ const Player = () => {
           >
             <div className="player__controls">
               <button
-                className={`player__button player__play button ${
+                className={`player__button  button player__play button ${
                   isPlaying ? "player__play_active" : ""
                 }`}
                 aria-label="play pause"
@@ -283,7 +283,7 @@ const Player = () => {
                 />
               </div>
               <button
-                className={`player__button player__menu button ${
+                className={`player__button  button player__menu button ${
                   isOpen ? "player__menu_opened" : ""
                 }`}
                 aria-label="menu"
@@ -303,14 +303,14 @@ const Player = () => {
               }`}
             >
               <button
-                className={`player__button player__button_type_video ${
+                className={`player__button  button player__button_type_video ${
                   isOpen ? "player__button_type_video_opened" : ""
                 }`}
               >
                 {isOpen ? "Клип" : ""}
               </button>
               <button
-                className={`player__button player__button_type_text ${
+                className={`player__button  button player__button_type_text ${
                   isOpen ? "player__button_type_text_opened" : ""
                 }`}
                 onClick={handleTextClick}
