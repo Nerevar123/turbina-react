@@ -20,16 +20,16 @@ function Main() {
         <h2 className="description__heading">Тезисы.</h2>
         <ul className="description__list">
             <li className="description__list-item">
-              <p className="description__text">— Дети никогда не прекращают творить и круто стараться быть на них похожими в этом</p>
+              <p className="description__text">Дети никогда не прекращают творить и круто стараться быть на них похожими в этом</p>
             </li>
             <li className="description__list-item">
-              <p className="description__text">— Детское бессознательное помогает родителям понять, что происходит внутри семьи</p>
+              <p className="description__text">Детское бессознательное помогает родителям понять, что происходит внутри семьи</p>
             </li>
             <li className="description__list-item">
-              <p className="description__text">— Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное в ней</p>
+              <p className="description__text">Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное в ней</p>
             </li>
             <li className="description__list-item">
-              <p className="description__text">— Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</p>
+              <p className="description__text">Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</p>
             </li>
         </ul>
       </article>
