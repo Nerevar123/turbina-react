@@ -89,7 +89,7 @@
 }
 
 .header__player {
-  margin: 0 auto 30px;
+  margin: 0 auto 15px;
 }
 
 @media screen and (min-width: 1281px) {
@@ -112,6 +112,10 @@
   .header {
     height: 670px;
   }
+  .header__player {
+    margin: 0 auto 30px;
+  }
+  
 
   .header__logo-link {
     width: 40px;
@@ -143,7 +147,7 @@
     width: 620px;
   }
   .header__player {
-    margin: 0 auto 30px;
+    margin: 0 auto 26px;
   }
 }
 
