@@ -1,43 +1,43 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import 'yup-phone';
 
 const PostForm = () => {
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const initialValues = {
-  name: '',
-  tel: '',
-  email: '',
-  poem: '',
-  checkbox: false,
-};
+  const initialValues = {
+    name: '',
+    tel: '',
+    email: '',
+    poem: '',
+    checkbox: false,
+  };
 
-const validationSchema = Yup.object({
-  name: Yup.string()
-  .min(2, 'Не менее двух символов')
-  .required('Вы пропустили это поле'),
-  tel: Yup.number()
-    .typeError('Введите корректный номер телефона')
-    .min(6, 'Не менее 6 цифр')
-    .required('Вы пропустили это поле'),
-  email: Yup.string()
-    .typeError('Введите корректный email-вдрес')
-    .email('Введите email-вдрес')
-    .required('Вы пропустили это поле'),
-  poem: Yup.string()
-    .min(10, 'Минимум 10 символов')
-    .required('Вы пропустили это поле'),
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .min(2, 'Не менее двух символов')
+      .required('Вы пропустили это поле'),
+    tel: Yup.string()
+      .phone('RU', false, 'Введите корректный номер телефона')
+      .required('Вы пропустили это поле'),
+    email: Yup.string()
+      .typeError('Введите корректный email-вдрес')
+      .email('Введите email-вдрес')
+      .required('Вы пропустили это поле'),
+    poem: Yup.string()
+      .min(10, 'Минимум 10 символов')
+      .required('Вы пропустили это поле'),
     checkbox: Yup.boolean()
-    .oneOf([true], "Нужно принять оферту")
-});
-
-const handleSubmit = (values) =>
-  new Promise((resolve, reject) => {
-      console.log('sended', values);
-      // resolve(true);
-      reject(new Error('Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!'))
+      .oneOf([true], "Нужно принять оферту")
   });
+
+  const handleSubmit = (values) =>
+    new Promise((resolve, reject) => {
+        console.log('sended', values);
+        resolve(true);
+        // reject(new Error('Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!'));
+    });
 
   return (
      <Formik
@@ -59,7 +59,7 @@ const handleSubmit = (values) =>
       }}
     >
       {({ isSubmitting, dirty, isValid, errors, touched, values, setFieldValue, setFieldTouched }) => (
-        <Form className="description__form form">
+        <Form className="description__form form" noValidate>
           <fieldset className="form__fieldset">
             <label htmlFor="name" className="form__label">
               <Field
