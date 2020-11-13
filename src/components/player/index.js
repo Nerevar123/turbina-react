@@ -54,7 +54,7 @@ const Player = () => {
         </audio>
         {size.width > 768 && (
           <>
-            <div>
+            
               <img
                 className={`player__song-cover ${
                   isOpen ? "player__song-cover_opened" : ""
@@ -81,7 +81,7 @@ const Player = () => {
                     }`}
                   >
                     <div className="player__song-container">
-                      <span className="player__song">
+                      <span className="player__song_type_curent player__song">
                         {currentTrack.title} — {currentTrack.author}
                       </span>
                       <span className="player__time">
@@ -127,7 +127,7 @@ const Player = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            
           </>
         )}
         {size.width <= 768 && size.width > 615 && (
@@ -154,7 +154,7 @@ const Player = () => {
                     isOpen ? "player__song-container_opened" : ""
                   }`}
                 >
-                  <span className="player__song">
+                  <span className="player__song player__song_type_curent">
                     {currentTrack.title} — {currentTrack.author}
                   </span>
                   <span className="player__time">
