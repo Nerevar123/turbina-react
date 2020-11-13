@@ -95,6 +95,10 @@
   .header {
     max-height: 100vh;
   }
+
+  .header__player {
+    margin: 0 auto 30px;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -142,7 +146,7 @@
     width: 620px;
   }
   .header__player {
-    margin: 0 auto 30px;
+    margin: 0 auto 26px;
   }
 }
 

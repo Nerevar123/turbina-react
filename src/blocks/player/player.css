@@ -10,6 +10,10 @@
   grid-area: player;
 }
 
+.player__audio {
+  display: none;
+}
+
 .player__controls-container {
   width: 100%;
   transition: all 0.3s ease-in-out;
@@ -42,7 +46,7 @@
   flex-direction: column;
   width: calc(1150px - 1 * (1280px - 100vw));
   min-width: 240px;
-  margin-left: 34px;
+  margin-left: 40px;
 }
 
 .player__song-info_opened {
@@ -51,6 +55,7 @@
 .player__song-container {
   display: flex;
   width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .player__button {
@@ -63,8 +68,8 @@
 .player__play {
   background-image: url(../../images/player-play.svg);
   margin: 0 20px 0 0;
-  width: 16px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   position: absolute;
   left: 0;
   top: 9px;
@@ -109,7 +114,18 @@
   height: 3px;
   background-color: rgba(243, 243, 243, 0.3);
   cursor: pointer;
+  position: relative;
 }
+
+.player__progress {
+  background-color: #fff;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .player__button_type_video {
   width: 0px;
   height: 0px;
@@ -144,12 +160,6 @@
 }
 .player__button {
   outline: none;
-}
-
-.player__progress {
-  background-color: #fff;
-  width: 50%;
-  height: 3px;
 }
 
 .player__song-list {
@@ -241,6 +251,12 @@
     padding-left: 10px;
     padding-right: 0;
   }
+
+  .player__song-container_opened {
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
   .player__timeline {
     margin: 11px 0 0 0;
   }
@@ -258,6 +274,10 @@
   }
   .player__controls-container {
     width: 100%;
+  }
+
+  .player__playlist-container_opened {
+    margin-top: 20px;
   }
 
   .player__song-cover_opened {
@@ -293,12 +313,12 @@
   .player__play {
     width: 18px;
     height: 18px;
-    top: 9px;
+    top: 12px;
   }
   .player__menu {
     width: 18px;
     height: 18px;
-    top: 9px;
+    top: 12px;
   }
   .player__controls-container {
     display: flex;
@@ -322,7 +342,7 @@
   }
   .player__song-info_opened {
     max-width: 82%;
-    
+
   }
   .player__button-container {
     max-height: 0;
@@ -348,7 +368,7 @@
   }
   .player__button_type_video_opened {
     min-width: 74px;
-    min-height: 31px;
+    min-height: 27px;
     font-size: 12px;
     line-height: 1.245;
     background-position: 8px center;
@@ -356,13 +376,14 @@
   }
   .player__button_type_text_opened {
     min-width: 161px;
-    min-height: 31px;
+    min-height: 27px;
     font-size: 12px;
     line-height: 1.245;
     margin: auto auto auto 0;
   }
   .player__playlist-container{
     transition: all 0.3s ease-in-out;
+    margin-top: 10px;
   }
   .player__playlist-container_opened{
     margin: 13px auto 0 auto;
@@ -370,6 +391,7 @@
   .player__song-list_opened {
     margin: 30px auto;
     width: calc(100% - 49px);
+    max-height: 80px;
   }
 
 }
