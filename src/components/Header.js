@@ -1,5 +1,4 @@
 import React from 'react';
-// import Player from './Player';
 import Player from './player/index';
 import useWindowSize from "../hooks/useWindowSize";
 import logo from '../images/header-logo.svg';
@@ -23,7 +22,7 @@ function Header() {
         <img className="header__logo" src={logo} alt="Маршак" />
       </a>
       <div className="header__links">
-        {size.width < 381 &&
+        {size.width < 615 &&
           <button
             className={`header__links-button button ${isButtonClicked ? "header__links-button_clicked" : "header__link" }`}
             onClick={handleButtonClick}>
