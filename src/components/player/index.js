@@ -2,7 +2,6 @@ import React from "react";
 import Track from "./Track";
 import PlayerTimeline from "./PlayerTimeline";
 import useWindowSize from "../../hooks/useWindowSize";
-import song_cover from "../../images/player-cover.png";
 import playlist from "./playlist";
 import throttling from "../../utils/throttling";
 import ctm from "../../utils/convertToMinutes";
@@ -14,6 +13,7 @@ const Player = () => {
   const [duration, setDuration] = React.useState(0);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isTextOpen, setIsTextOpen] = React.useState(false);
   const myPlayer = React.useRef(null);
 
   const onTimeUpdate = throttling((e) => {
@@ -26,6 +26,10 @@ const Player = () => {
 
   function handleMenuClick() {
     isOpen ? setIsOpen(false) : setIsOpen(true);
+  }
+
+  function handleTextClick() {
+    isTextOpen ? setIsTextOpen(false) : setIsTextOpen(true);
   }
 
   function handlePlayback() {
@@ -54,80 +58,90 @@ const Player = () => {
         </audio>
         {size.width > 768 && (
           <>
-            
-              <img
-                className={`player__song-cover ${
-                  isOpen ? "player__song-cover_opened" : ""
-                }`}
-                src={song_cover}
-                alt="обложка песни"
-              />
-              <div
-                className={`player__controls-container ${
-                  isOpen ? "player__controls-container_opened" : ""
-                }`}
-              >
-                <div className="player__controls">
-                  <button
-                    className={`player__button player__play button ${
-                      isPlaying ? "player__play_active" : ""
-                    }`}
-                    aria-label="play pause"
-                    onClick={handlePlayback}
-                  />
-                  <div
-                    className={`player__song-info ${
-                      isOpen ? "player__song-info_opened" : ""
-                    }`}
-                  >
-                    <div className="player__song-container">
-                      <span className="player__song_type_curent player__song">
-                        {currentTrack.title} — {currentTrack.author}
-                      </span>
-                      <span className="player__time">
-                        {ctm(duration - currentTime)}
-                      </span>
-                    </div>
-                    <PlayerTimeline
-                      currentTime={currentTime}
-                      duration={duration}
-                      onClick={(time) => {
-                        myPlayer.current.currentTime = time;
-                      }}
-                    />
+            <img
+              className={`player__song-cover ${
+                isOpen ? "player__song-cover_opened" : ""
+              }`}
+              src={currentTrack.cover}
+              alt="обложка песни"
+            />
+            <div
+              className={`player__controls-container ${
+                isOpen ? "player__controls-container_opened" : ""
+              }`}
+            >
+              <div className="player__controls">
+                <button
+                  className={`player__button player__play button ${
+                    isPlaying ? "player__play_active" : ""
+                  }`}
+                  aria-label="play pause"
+                  onClick={handlePlayback}
+                />
+                <div
+                  className={`player__song-info ${
+                    isOpen ? "player__song-info_opened" : ""
+                  }`}
+                >
+                  <div className="player__song-container">
+                    <span className= "player__song player__song_type_active">
+                      {currentTrack.title} — {currentTrack.firstAuthor} <span className="player__song-feat">feat. </span>{currentTrack.secondAuthor}
+                    </span>
+                    <span className="player__time">
+                      {ctm(duration - currentTime)}
+                    </span>
                   </div>
-                  <button
-                    className={`player__button player__button_type_text ${
-                      isOpen ? "player__button_type_text_opened" : ""
-                    }`}
-                  >
-                    {isOpen ? "Текст песни" : ""}
-                  </button>
-                  <button
-                    className={`player__button player__menu button ${
-                      isOpen ? "player__menu_opened" : ""
-                    }`}
-                    aria-label="menu"
-                    onClick={handleMenuClick}
+                  <PlayerTimeline
+                    currentTime={currentTime}
+                    duration={duration}
+                    onClick={(time) => {
+                      myPlayer.current.currentTime = time;
+                    }}
                   />
                 </div>
-                <ul
-                  className={`player__song-list
-                ${isOpen ? "player__song-list_opened" : ""}`}
+                <button
+                  className={`player__button player__button_type_text ${
+                    isOpen ? "player__button_type_text_opened" : ""
+                  }`}
+                  onClick={handleTextClick}
                 >
-                  {playlist.map((track) => (
-                    <Track
-                      track={track}
-                      key={track.id}
-                      onClick={(track) => {
-                        setCurrentTrack(track);
-                        setIsPlaying(false);
-                      }}
-                    />
-                  ))}
-                </ul>
+                  {isOpen ? "Текст песни" : ""}
+                </button>
+                <button
+                  className={`player__button player__menu button ${
+                    isOpen ? "player__menu_opened" : ""
+                  }`}
+                  aria-label="menu"
+                  onClick={handleMenuClick}
+                />
               </div>
-            
+              <ul
+                className={`player__song-list
+              ${isOpen ? "player__song-list_opened" : ""}`}
+              >
+                {!isTextOpen && (
+                  <>
+                    {playlist.map((track) => (
+                      <Track
+                        track={track}
+                        key={track.id}
+                        currentTrack={currentTrack}
+                        onClick={(track) => {
+                          setCurrentTrack(track);
+                          setIsPlaying(false);
+                        }}
+                      />
+                    ))}
+                  </>
+                )}
+                {isTextOpen && (
+                  <>
+                    <p className="player__text-heading">Текст песни:</p>
+                    <p className="player__text">{currentTrack.text}</p>
+                  </>
+                )}
+              </ul>
+            </div>
           </>
         )}
         {size.width <= 768 && size.width > 615 && (
@@ -154,8 +168,8 @@ const Player = () => {
                     isOpen ? "player__song-container_opened" : ""
                   }`}
                 >
-                  <span className="player__song player__song_type_curent">
-                    {currentTrack.title} — {currentTrack.author}
+                  <span className= "player__song player__song_type_active">
+                    {currentTrack.title} — {currentTrack.firstAuthor} <span className="player__song-feat">feat. </span>{currentTrack.secondAuthor}
                   </span>
                   <span className="player__time">
                     {ctm(duration - currentTime)}
@@ -180,6 +194,7 @@ const Player = () => {
                 className={`player__button player__button_type_text ${
                   isOpen ? "player__button_type_text_opened" : ""
                 }`}
+                onClick={handleTextClick}
               >
                 {isOpen ? "Текст песни" : ""}
               </button>
@@ -200,23 +215,34 @@ const Player = () => {
                 className={`player__song-cover ${
                   isOpen ? "player__song-cover_opened" : ""
                 }`}
-                src={song_cover}
+                src={currentTrack.cover}
                 alt="обложка песни"
               ></img>
               <ul
                 className={`player__song-list
                       ${isOpen ? "player__song-list_opened" : ""}`}
               >
-                {playlist.map((track) => (
-                  <Track
-                    track={track}
-                    key={track.id}
-                    onClick={(track) => {
-                      setCurrentTrack(track);
-                      setIsPlaying(false);
-                    }}
-                  />
-                ))}
+                {!isTextOpen && (
+                  <>
+                    {playlist.map((track) => (
+                      <Track
+                        track={track}
+                        key={track.id}
+                        currentTrack={currentTrack}
+                        onClick={(track) => {
+                          setCurrentTrack(track);
+                          setIsPlaying(false);
+                        }}
+                      />
+                    ))}
+                  </>
+                )}
+                {isTextOpen && (
+                  <>
+                    <p className="player__text-heading">Текст песни:</p>
+                    <p className="player__text">{currentTrack.text}</p>
+                  </>
+                )}
               </ul>
             </div>
           </div>
@@ -241,9 +267,9 @@ const Player = () => {
                 }`}
               >
                 <div className="player__song-container">
-                  <span className="player__song">
-                    {currentTrack.title} — {currentTrack.author}
-                  </span>
+                <span className= "player__song player__song_type_active">
+                  {currentTrack.title} — {currentTrack.firstAuthor} <span className="player__song-feat">feat. </span>{currentTrack.secondAuthor}
+                </span>
                   <span className="player__time">
                     {ctm(duration - currentTime)}
                   </span>
@@ -268,7 +294,7 @@ const Player = () => {
               className={`player__song-cover ${
                 isOpen ? "player__song-cover_opened" : ""
               }`}
-              src={song_cover}
+              src={currentTrack.cover}
               alt="обложка песни"
             ></img>
             <div
@@ -287,6 +313,7 @@ const Player = () => {
                 className={`player__button player__button_type_text ${
                   isOpen ? "player__button_type_text_opened" : ""
                 }`}
+                onClick={handleTextClick}
               >
                 {isOpen ? "Текст песни" : ""}
               </button>
@@ -296,16 +323,27 @@ const Player = () => {
                 className={`player__song-list
                   ${isOpen ? "player__song-list_opened" : ""}`}
               >
-                {playlist.map((track) => (
-                  <Track
-                    track={track}
-                    key={track.id}
-                    onClick={(track) => {
-                      setCurrentTrack(track);
-                      setIsPlaying(false);
-                    }}
-                  />
-                ))}
+                {!isTextOpen && (
+                  <>
+                    {playlist.map((track) => (
+                      <Track
+                        track={track}
+                        key={track.id}
+                        currentTrack={currentTrack}
+                        onClick={(track) => {
+                          setCurrentTrack(track);
+                          setIsPlaying(false);
+                        }}
+                      />
+                    ))}
+                  </>
+                )}
+                {isTextOpen && (
+                  <>
+                    <p className="player__text-heading">Текст песни:</p>
+                    <p className="player__text">{currentTrack.text}</p>
+                  </>
+                )}
               </ul>
             </div>
           </div>
