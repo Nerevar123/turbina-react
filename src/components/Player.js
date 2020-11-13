@@ -25,8 +25,7 @@ function Player() {
 
   return (
     <>
-    {size.width > 768 && (
-      <div className="header__player player">
+    <div className="header__player player">
         <audio>
           <source src="song.mp3" type="audio/mp3" />
           <p>
@@ -34,15 +33,15 @@ function Player() {
             <a href="song.mp3">link to the audio</a> instead.
           </p>
         </audio>
-        
+    {size.width > 768 && (
+      <>     
           <img
             className={`player__song-cover ${
               isOpen ? "player__song-cover_opened" : ""
             }`}
             src={song_cover}
             alt="обложка песни"
-          ></img>
-        
+          />   
         <div
           className={`player__controls-container ${
             isOpen ? "player__controls-container_opened" : ""
@@ -105,17 +104,9 @@ function Player() {
               </li>
             </ul>
         </div>
-      </div>
+       </>
       )}
       {size.width <= 768 && size.width > 615 && (
-      <div className="header__player player">
-        <audio>
-          <source src="song.mp3" type="audio/mp3" />
-          <p>
-            Your browser doesn't support HTML5 audio. Here is a{" "}
-            <a href="song.mp3">link to the audio</a> instead.
-          </p>
-        </audio>
         <div
           className={`player__controls-container ${
             isOpen ? "player__controls-container_opened" : ""
@@ -134,7 +125,9 @@ function Player() {
                 isOpen ? "player__song-info_opened" : ""
               }`}
             >
-              <div className="player__song-container">
+              <div className={`player__song-container ${
+                isOpen ? "player__song-container_opened" : ""
+              }`}>
                 <span className="player__song_type_curent player__song">
                   Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров{" "}
                 </span>
@@ -166,7 +159,9 @@ function Player() {
               onClick={handleMenuClick}
             />
           </div>
-            <div className="player__playlist-container">
+            <div className={`player__playlist-container ${
+                isOpen ? "player__playlist-container_opened" : ""
+              }`}>
               <img
                 className={`player__song-cover ${
                   isOpen ? "player__song-cover_opened" : ""
@@ -196,17 +191,8 @@ function Player() {
               </ul>
             </div>
         </div>
-      </div>
       )}
       {size.width <= 615 && (
-      <div className="header__player player">
-        <audio>
-          <source src="song.mp3" type="audio/mp3" />
-          <p>
-            Your browser doesn't support HTML5 audio. Here is a{" "}
-            <a href="song.mp3">link to the audio</a> instead.
-          </p>
-        </audio>
         <div
           className={`player__controls-container ${
             isOpen ? "player__controls-container_opened" : ""
@@ -291,8 +277,8 @@ function Player() {
               </ul>
             </div>
         </div>
-      </div>
       )}
+      </div>
     </>
   );
 }
