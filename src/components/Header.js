@@ -22,7 +22,7 @@ function Header() {
         <img className="header__logo" src={logo} alt="Маршак" />
       </a>
       <div className="header__links">
-        {size.width < 381 &&
+        {size.width < 615 &&
           <button
             className={`header__links-button button ${isButtonClicked ? "header__links-button_clicked" : "header__link" }`}
             onClick={handleButtonClick}>

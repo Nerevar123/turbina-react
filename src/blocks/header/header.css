@@ -41,6 +41,8 @@
   margin-right: 15px;
   margin-top: 15px;
   grid-area: links;
+  display: flex;
+  flex-direction: column;
 }
 
 .header__links-list {
@@ -115,6 +117,7 @@
   .header {
     height: 670px;
   }
+
   .header__player {
     margin: 0 auto 30px;
   }
@@ -155,6 +158,10 @@
 }
 
 @media screen and (max-width: 615px) {
+  .header {
+    height: 95vh;
+  }
+
   .header__logo-link {
     width: 24px;
     height: 24px;
