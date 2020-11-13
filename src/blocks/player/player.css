@@ -263,6 +263,10 @@
   .player__song {
     font-size: 18px;
   }
+  .player__song-container_opened {
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+  }
   .player__song-info_opened {
     margin: auto 20px auto 35px;
     width: auto;
@@ -289,6 +293,9 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+  .player__playlist-container_opened {
+    margin-top: 20px;
   }
   .player__song-list_opened {
     max-height: 112px;
