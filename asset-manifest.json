@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/turbina-react/static/css/main.3a6a1697.chunk.css",
+    "main.css": "/turbina-react/static/css/main.b0555e3f.chunk.css",
     "main.js": "/turbina-react/static/js/main.294bbacf.chunk.js",
     "main.js.map": "/turbina-react/static/js/main.294bbacf.chunk.js.map",
     "runtime-main.js": "/turbina-react/static/js/runtime-main.47714c05.js",
@@ -8,7 +8,7 @@
     "static/js/2.ac684a42.chunk.js": "/turbina-react/static/js/2.ac684a42.chunk.js",
     "static/js/2.ac684a42.chunk.js.map": "/turbina-react/static/js/2.ac684a42.chunk.js.map",
     "index.html": "/turbina-react/index.html",
-    "static/css/main.3a6a1697.chunk.css.map": "/turbina-react/static/css/main.3a6a1697.chunk.css.map",
+    "static/css/main.b0555e3f.chunk.css.map": "/turbina-react/static/css/main.b0555e3f.chunk.css.map",
     "static/js/2.ac684a42.chunk.js.LICENSE.txt": "/turbina-react/static/js/2.ac684a42.chunk.js.LICENSE.txt",
     "static/media/index.css": "/turbina-react/static/media/video-play.9dc62cce.svg",
     "static/media/cover2.67511f8c.jpg": "/turbina-react/static/media/cover2.67511f8c.jpg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.47714c05.js",
     "static/js/2.ac684a42.chunk.js",
-    "static/css/main.3a6a1697.chunk.css",
+    "static/css/main.b0555e3f.chunk.css",
     "static/js/main.294bbacf.chunk.js"
   ]
 }
