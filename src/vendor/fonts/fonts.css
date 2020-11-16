@@ -43,3 +43,7 @@
   src: url("../fonts/Inter-MediumItalic.woff2") format("woff2"),
        url("../fonts/Inter-MediumItalic.woff") format("woff");
 }
+
+.font {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+}

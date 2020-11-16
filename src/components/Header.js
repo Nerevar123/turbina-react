@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import Player from './player/index';
 import useWindowSize from "../hooks/useWindowSize";
 import logo from '../images/header-logo.svg';
@@ -9,11 +10,7 @@ function Header() {
   const [isButtonClicked, setIsButtonClicked] = React.useState(false);
 
   function handleButtonClick() {
-    if (isButtonClicked) {
-      setIsButtonClicked(false);
-    } else {
-      setIsButtonClicked(true);
-    }
+    setIsButtonClicked(!isButtonClicked);
   }
 
   return (
@@ -24,23 +21,23 @@ function Header() {
       <div className="header__links">
         {size.width < 615 &&
           <button
-            className={`header__links-button button ${isButtonClicked ? "header__links-button_clicked" : "header__link" }`}
+            className={cn("header__links-button", "button", "font", {"header__links-button_clicked": isButtonClicked}, {"header__link": !isButtonClicked})}
             onClick={handleButtonClick}>
               {!isButtonClicked ? "Стриминги" : ""}
           </button>
         }
-        <ul className={`header__links-list ${!isButtonClicked ? "header__links-list_closed" : ""}`}>
+        <ul className={cn("header__links-list", {"header__links-list_closed": !isButtonClicked})}>
           <li className="header__links-item">
-            <a href="https://music.yandex.ru" className="header__link" rel="noreferrer" target="_blank">Яндекс.Музыка ↗</a>
+            <a href="https://music.yandex.ru" className="header__link font" rel="noreferrer" target="_blank">Яндекс.Музыка ↗</a>
           </li>
           <li className="header__links-item">
-            <a href="https://www.spotify.com/" className="header__link" rel="noreferrer" target="_blank">Spotify ↗</a>
+            <a href="https://www.spotify.com/" className="header__link font" rel="noreferrer" target="_blank">Spotify ↗</a>
           </li>
           <li className="header__links-item">
-            <a href="https://www.apple.com/apple-music/" className="header__link" rel="noreferrer" target="_blank">Apple Music ↗</a>
+            <a href="https://www.apple.com/apple-music/" className="header__link font" rel="noreferrer" target="_blank">Apple Music ↗</a>
           </li>
           <li className="header__links-item">
-            <a href="https://vk.com/vkmusic" className="header__link" rel="noreferrer" target="_blank">VK Music ↗</a>
+            <a href="https://vk.com/vkmusic" className="header__link font" rel="noreferrer" target="_blank">VK Music ↗</a>
           </li>
         </ul>
       </div>

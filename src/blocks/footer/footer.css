@@ -13,14 +13,10 @@
 .footer__copyright {
   margin-top: auto;
   margin-bottom: auto;
-  font-size: inherit;
-  line-height: inherit;
 }
 
 .footer__link {
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  color: #fff;
 }
 
 @media screen and (max-width: 1024px) {
@@ -30,7 +26,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 615px) {
   .footer {
     font-size: 12px;
     line-height: 1.83;
