@@ -1,10 +1,11 @@
 import React from 'react';
+import cn from 'classnames';
 
 const Track = ({ track, currentTrack, onClick }) => {
   const { title = 'No title', firstAuthor = 'No author', secondAuthor = 'No author' } = track;
 
   return (
-    <li className={`player__song player__song_type_listed ${track.id === currentTrack.id ? 'player__song_type_current' : ''}`} onClick={() => onClick(track)}>
+    <li className={cn("player__song", "player__song_type_listed", "font", {"player__song_type_current": track.id === currentTrack.id})} onClick={() => onClick(track)}>
       {title} — {firstAuthor}
       <span className="player__song-feat"> feat. </span>
       {secondAuthor}

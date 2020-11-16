@@ -1,9 +1,6 @@
-.form__heading {
-  font-size: 30px;
-  line-height: 1.21;
-  font-weight: 400;
-  margin-top: 120px;
-  margin-bottom: 66px;
+.form {
+  width: 100%;
+  max-width: 600px;
 }
 
 .form__fieldset {
@@ -12,7 +9,6 @@
   border: none;
   margin: 0;
   padding: 0;
-  font-size: 16px;
 }
 
 .form__label {
@@ -28,6 +24,7 @@
   box-sizing: border-box;
   border-bottom: 2px solid black;
   color: #000;
+  font-size: 16px;
   line-height: 1.25;
 }
 
@@ -37,14 +34,15 @@
 }
 
 .form__input_type_error {
-  border-bottom-color: red;
-  color: red;
+  border-bottom-color: #f00;
+  color: #f00;
 }
 
 .form__input::placeholder {
   color: #000;
   opacity: 0.4;
   font-size: 16px;
+  line-height: 1.25;
 }
 
 .form__input:focus {
@@ -52,13 +50,13 @@
 }
 
 .form__error {
-  font-size: 16px;
-  line-height: 1.25;
-  color: red;
+  color: #f00;
   position: absolute;
   top: calc(100% + 2px);
   left: 0;
   z-index: 10;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .form__checkbox-field {
@@ -114,7 +112,7 @@
   border-radius: 30px;
   margin-top: 40px;
   margin-bottom: 18px;
-  color: black;
+  color: #000;
 }
 
 .form__button_disabled {
@@ -133,9 +131,10 @@
   }
 }
 
-@media screen and (max-width: 414px) {
-  .form__fieldset {
+@media screen and (max-width: 615px) {
+  .form__input {
     font-size: 14px;
+    height: 42px;
   }
 
   .form__label {
@@ -146,8 +145,8 @@
     font-size: 14px;
   }
 
-  .form__input {
-    height: 42px;
+  .form__error {
+    font-size: 14px;
   }
 
   .form__button {
