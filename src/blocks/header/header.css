@@ -1,0 +1,200 @@
+.header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: repeat(3, minmax(min-content, 1fr));
+  grid-template-areas: "logo links"
+                       "turbina turbina"
+                       "player player";
+}
+
+.header__logo-link {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  grid-area: logo;
+}
+
+.header__logo {
+  width: 100%;
+  height: 100%;
+}
+
+.header__heading {
+  display: flex;
+  grid-area: turbina;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.header__turbina-logo {
+  width: 60%;
+  margin: auto;
+}
+
+.header__links {
+  margin-right: 15px;
+  margin-top: 15px;
+  grid-area: links;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__links-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.header__links-item {
+  margin-top: 8px;
+}
+
+.header__links-item:first-of-type {
+  margin-top: 0px;
+}
+
+.header__link {
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.21;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 6px 19px;
+}
+
+.header__links-button {
+  margin-left: auto;
+  margin-bottom: 6px;
+}
+
+.header__links-button_clicked {
+  background-image: url('../../images/header-links-clicked.svg');
+  background-repeat: no-repeat;
+  height: 29px;
+  width: 29px;
+  border: 0;
+}
+
+.header__player {
+  margin: 0 auto 15px;
+}
+
+@media screen and (min-width: 1281px) {
+  .header {
+    max-height: 100vh;
+  }
+
+  .header__player {
+    margin: 0 auto 30px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    height: 770px;
+  }
+
+  .header__turbina-logo {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 670px;
+  }
+
+  .header__player {
+    margin: 0 auto 30px;
+  }
+
+  .header__logo-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__links-item {
+    margin-top: 7px;
+  }
+
+  .header__link {
+    font-size: 15px;
+    padding: 6px 16px;
+  }
+
+  .header__turbina-logo {
+    width: 600px;
+    padding-top: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 100vh;
+    min-height: 483px;
+  }
+
+  .header__turbina-logo {
+    width: 620px;
+  }
+
+  .header__player {
+    margin: 0 auto 26px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .header {
+    height: 95vh;
+  }
+
+  .header__logo-link {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+
+  .header__links {
+    margin-right: 13px;
+    margin-top: 13px;
+  }
+
+  .header__links-item {
+    margin-top: 6px;
+  }
+
+  .header__link {
+    padding: 5px 14px;
+  }
+
+  .header__turbina-logo {
+    width: 270px;
+  }
+
+  .header__link {
+    font-size: 12px;
+  }
+
+  .header__links-list {
+    max-height: 134px;
+  }
+
+  .header__links-list_closed {
+    max-height: 0px;
+  }
+}
